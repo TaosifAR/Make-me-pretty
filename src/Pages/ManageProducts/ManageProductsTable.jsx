@@ -15,6 +15,7 @@ function ManageProductsTable()
        
         <th>Product Name</th>
         <th>Price</th>
+       
         <th>Description</th>
         <th>Action</th>
       </tr>
@@ -28,6 +29,7 @@ function ManageProductsTable()
        
             <td>{vehicle.Name}</td>
             <td>{vehicle.Price}</td>
+            <td>{vehicle.image}</td>
             <td>{vehicle.description}</td>
             <td>
                 <button className="btn btn-warning">X</button>
