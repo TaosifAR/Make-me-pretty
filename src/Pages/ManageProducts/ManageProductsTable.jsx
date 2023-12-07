@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 function ManageProductsTable()
 
 {
@@ -29,6 +29,7 @@ function ManageProductsTable()
             <td>{vehicle.Price}</td>
           
             <td>
+            <Link to={`/product/${vehicle?._id}`}><button className="btn btn-success">D</button></Link>
                 <button className="btn btn-warning">X</button>
                 <button className="btn btn-outline">U</button>
             </td>
