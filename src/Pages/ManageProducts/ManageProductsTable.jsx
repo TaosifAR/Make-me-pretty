@@ -1,10 +1,30 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 function ManageProductsTable()
 
 {
 
-    const vehicles= useLoaderData();
-    console.log(vehicles);
+    const data = useLoaderData();
+    const [vehicles, setProducts] = useState(data);
+  function handleDeleteProduct(vehicleId)
+  {
+    fetch(`http://localhost:3000/delete-by-id/${vehicleId}`,{
+    method:"DELETE"
+  })
+  .then((res) => res.json())
+  .then((data) =>{ 
+  if(data.deletedCount>0)
+  {
+    const otherProduct = vehicles?.filter(vehicle => vehicle._id != vehicleId)
+setProducts(otherProduct)
+
+  }
+  
+  }
+  );
+    
+
+  }
 
      return(
     <div className="overflow-x-auto">
@@ -30,7 +50,8 @@ function ManageProductsTable()
           
             <td>
             <Link to={`/product/${vehicle?._id}`}><button className="btn btn-success">D</button></Link>
-                <button className="btn btn-warning">X</button>
+                <button className="btn btn-warning"
+                onClick={()=>handleDeleteProduct(vehicle._id)}>X</button>
                 <Link to={`/update-product/${vehicle?._id}`}><button className="btn btn-outline">U</button></Link>
                 
             </td>
