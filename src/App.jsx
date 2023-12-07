@@ -11,6 +11,7 @@ import Addproducts from './Pages/Addproducts/Addproducts';
 import Addreviews from './Pages/Addreviews/addreviews';
 import Productdetails from './Pages/Home/Productdetails';
 import Updateproduct from './Pages/UpdateProduct/Updateproduct';
+import PostTeam from './Pages/PostTeam/PostTeam';
 
 function App() {
   const router = createBrowserRouter([
@@ -64,6 +65,11 @@ function App() {
       
 
     },
+    {
+      path: "/add-teammate",
+    element:<PostTeam></PostTeam>
+    },
+    
   ]);
  
 

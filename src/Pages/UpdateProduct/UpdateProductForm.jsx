@@ -34,7 +34,7 @@ function UpdateProductForm()
     .then(data => {
         if(data.modifiedCount == 1)
         {
-            navigate(`/add-product`)
+            navigate(`/`)
         }
     }
         

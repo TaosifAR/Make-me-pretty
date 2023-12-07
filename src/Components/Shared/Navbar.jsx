@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Navbar()
 {
     return(
@@ -19,10 +20,13 @@ function Navbar()
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a href="http://localhost:5173/contact-us">Contact Us</a></li>
+    
+      <li><Link to={`/contact-us`}>Contact Us</Link></li>
       
-      <li><a href="http://localhost:5173/manage-product">Manage Product</a></li>
-      <li><a href="http://localhost:5173/add-product">Add Product</a></li>
+      <li><Link to={`/manage-product`}>Manage Product</Link></li>
+      <li><Link to={`/add-product`}>Add Product</Link></li>
+      <li><Link to={`/add-teammate`}>Add Member</Link></li>
+      
     </ul>
   </div>
   <div className="navbar-end">
