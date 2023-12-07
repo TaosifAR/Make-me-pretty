@@ -1,6 +1,38 @@
 import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function ContactForm() {
+  const navigate =useNavigate();
+
+  function handledata(event) {
+    event.preventDefault();
+    const Email = event.target.email.value;
+    const Subject = event.target.Subject.value;
+    const Message = event.target.message.value; // Access image URL from the input field
+  
+
+    const vehicle = {
+     Email,
+     Subject,
+     Message, // Include image URL in the vehicle object
+      
+     
+    };
+
+    fetch(`http://localhost:3000/buy-prod`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(vehicle),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.acknowledged) {
+        navigate('/');
+      }
+    });
+  }
 
   return (
     <div>

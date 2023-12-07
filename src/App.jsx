@@ -12,6 +12,8 @@ import Addreviews from './Pages/Addreviews/addreviews';
 import Productdetails from './Pages/Home/Productdetails';
 import Updateproduct from './Pages/UpdateProduct/Updateproduct';
 import PostTeam from './Pages/PostTeam/PostTeam';
+import Teamexplore from './Pages/Teamexplore';
+import Buyproduct from './Pages/Buyproduct';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,7 +28,10 @@ function App() {
     },
     {
       path: "/contact-us",
-      element: <ContactUs/>
+      element: <ContactUs/>,
+      loader:function(){
+        return fetch(`http://localhost:3000/contact-us`);
+      }
        },
     {
       path: "/manage-product",
@@ -69,9 +74,24 @@ function App() {
       path: "/add-teammate",
     element:<PostTeam></PostTeam>
     },
+    {
+      path: "/team-explorer",
+    element:<Teamexplore></Teamexplore>
+    },
+
+    {
+      path: "/buy-product",
+    element:<Buyproduct></Buyproduct>,
+    loader:function(){
+      return fetch(`http://localhost:3000/add-vehicles`);
+
+    }
     
+    },
+
+   
   ]);
- 
+  
 
   return (
    <RouterProvider router={router}></RouterProvider>

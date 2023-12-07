@@ -6,6 +6,7 @@ import ContactForm from "../ContactUs/ContactForm";
 import Aboutus from "./Aboutus";
 import Homebanner from "./Homebanner";
 import Ourproducts from "./Ourproducts";
+import Teammates from "./TeamMates";
 
 function Home()
 {
@@ -16,9 +17,9 @@ function Home()
             <Homebanner></Homebanner>
             <div className="max-w-6xl mx-auto"><Ourproducts></Ourproducts></div>
             <Aboutus></Aboutus>
-            <div className="max-w-3xl mx-auto"><ContactForm></ContactForm></div>
             
-         
+           <div className="max-w-4xl mx-auto" ><Teammates></Teammates></div>
+            
            <div className="max-w-6xl mx-auto"> <Footer></Footer></div>
            
             

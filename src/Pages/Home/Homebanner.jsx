@@ -1,4 +1,5 @@
 import Aboutus from "./Aboutus";
+import { Link } from "react-router-dom";
 
 function Homebanner() {
     return (
@@ -8,7 +9,7 @@ function Homebanner() {
                 <div>
                     <h1 className="text-5xl font-semibold">Make <span className="text-red-300">Yourself</span> Pretty!</h1>
                     <p className="py-6">Welcome to Make Me Pretty, your ultimate destination for exquisite makeup products that accentuate your beauty.We understand the essence of every girl's desire to feel confident and glamorous.</p>
-                    <button className="btn btn-outline btn-accent">Let's Buy</button>
+                    <Link to={`/buy-product`}><button className="btn btn-outline btn-accent">Let's Buy</button></Link>
                 </div>
             </div>
            

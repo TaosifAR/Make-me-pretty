@@ -30,7 +30,8 @@ function Navbar()
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+ 
+   <Link to={`/team-explorer`} className="btn">Team Explore</Link>
   </div>
 </div>
     )
