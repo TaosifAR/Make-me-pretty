@@ -12,7 +12,7 @@ function Home()
         <div className="max-w-8xl mx-auto">
             <Navbar ></Navbar>
             <Homebanner></Homebanner>
-            <div className="max-w-3xl mx-auto"><Ourproducts></Ourproducts></div>
+            <div className="max-w-6xl mx-auto"><Ourproducts></Ourproducts></div>
             <Aboutus></Aboutus>
             <div className="max-w-3xl mx-auto"><ContactForm></ContactForm></div>
             

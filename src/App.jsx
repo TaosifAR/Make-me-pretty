@@ -9,6 +9,7 @@ import ContactUs from './Pages/ContactUs/contactus';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
 import Addproducts from './Pages/Addproducts/Addproducts';
 import Addreviews from './Pages/Addreviews/addreviews';
+import Productdetails from './Pages/Home/Productdetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -24,7 +25,7 @@ function App() {
     {
       path: "/contact-us",
       element: <ContactUs/>
-    },
+       },
     {
       path: "/manage-product",
       element:<ManageProducts/>,
@@ -40,6 +41,17 @@ function App() {
       path: "/add-review",
       element:<Addreviews/>
     },
+    {
+      path: "/product/:id",
+      element:<Productdetails></Productdetails>,
+      loader: function({params}) {
+       
+        return fetch(`http://localhost:3000/product/${params.id}`);
+      }
+      
+      
+
+    },
   ]);
  
 
@@ -48,4 +60,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link,useLoaderData } from "react-router-dom";
 function Ourproducts()
 
 {
@@ -13,15 +13,20 @@ function Ourproducts()
     
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7  my-10">
   {vehicles?.map(vehicle => (
     <div key={vehicle._id} className="card card-compact bg-base-200 shadow-xl">
-      <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-      <div className="card-body">
-        <h2 className="card-title">{vehicle.title}</h2>
-        <p>{vehicle.description}</p>
+      <figure><img 
+      src={vehicle?.Image}
+     />
+      </figure>
+      <div className="Face Wash">
+        <h2 className="card-title">{vehicle?.Name}</h2>
+        <p>{vehicle?.Price}</p>
+       
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+            <Link to={`/product/${vehicle._id}`}><button className="btn btn-primary">VIEW DETAILS</button></Link>
+          
         </div>
       </div>
     </div>
